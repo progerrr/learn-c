@@ -5,9 +5,9 @@
 
 using namespace std;
 
-double f(double x, int k) { return x - k * cos(x); }
+static double f(double x, int k) { return x - k * cos(x); }
 
-void fpd(double eps, int k) {
+void fpd(double eps, int k, int precision) {
     double x, a, b;
     int i;
 
@@ -29,18 +29,18 @@ void fpd(double eps, int k) {
             i += 1;
         }
 
-        cout << setprecision(8) << "x= " << x << endl;
+        cout << setprecision(precision) << "x= " << x << endl;
         cout << "i = " << i << endl;
     }
 }
 
-double df(double x, int k) { return 1 + k * sin(x); }
+static double df(double x, int k) { return 1 + k * sin(x); }
 
-void fn(double eps, int k) {
+void fn(double eps, int k, int precision) {
     double x0;
     int i = 0;
 
-    cout << "Input a: ";
+    cout << "Input a: "<<endl;
     cin >> x0;
 
     double x1 = x0 - f(x0, k) / df(x0, k);
@@ -50,6 +50,6 @@ void fn(double eps, int k) {
         i += 1;
     }
 
-    cout << setprecision(8) << "x= " << x1 << endl;
+    cout << setprecision(precision) << "x= " << x1 << endl;
     cout << "i= " << i << endl;
 }
