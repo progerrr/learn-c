@@ -7,7 +7,8 @@ using namespace std;
 
 static double f(double x, int k) { return x - k * cos(x); }
 
-void fpd(double eps, int k, int precision) {
+void fpd(double eps, int k, int precision, int n) {
+    cout<<"Half Division" << "("<<n<<")"<<": "<<endl;
     double x, a, b;
     int i;
 
@@ -36,20 +37,40 @@ void fpd(double eps, int k, int precision) {
 
 static double df(double x, int k) { return 1 + k * sin(x); }
 
-void fn(double eps, int k, int precision) {
-    double x0;
+void fn(double eps, int k, int precision, int n) {
+    cout<<"Newton" << "("<<n<<")"<<": "<<endl;
+    double a;
     int i = 0;
 
-    cout << "Input a: "<<endl;
-    cin >> x0;
+    cout << "Input a: " << endl;
+    cin >> a;
 
-    double x1 = x0 - f(x0, k) / df(x0, k);
-    while (fabs(x1 - x0) > eps) {
-        x0 = x1;
-        x1 = x0 - f(x0, k) / df(x0, k);
+    double x = a - f(a, k) / df(a, k);
+    while (fabs(x - a) > eps) {
+        a = x;
+        x = a - f(a, k) / df(a, k);
         i += 1;
     }
 
-    cout << setprecision(precision) << "x= " << x1 << endl;
+    cout << setprecision(precision) << "x= " << x << endl;
+    cout << "i= " << i << endl;
+}
+
+void fiter(double eps, int k, int precision, int n) {
+    cout<<"Iteration" << "("<<n<<")"<<": "<<endl;
+    double a;
+    int i = 0;
+
+    cout << "Input a: " << endl;
+    cin >> a;
+
+    double x = a - f(a, k);
+    while (fabs(f(x, k) - f(a, k)) > eps) {
+        a = x;
+        x = a - f(a, k);
+        i += 1;
+    }
+
+    cout << setprecision(precision) << "x= " << x << endl;
     cout << "i= " << i << endl;
 }
