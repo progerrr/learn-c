@@ -2,7 +2,8 @@
 #include <iostream>
 
 int main() {
-    choice_array();
+    
+    sort_choice();
 
     return 0;
 }

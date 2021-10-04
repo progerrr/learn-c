@@ -1,3 +1,3 @@
 #pragma once
 
-void choice_array();
+void sort_choice();

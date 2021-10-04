@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void choice_array() {
+void sort_choice() {
     const int length = 5;
     int array[length] = {30, 50, 20, 10, 40};
 
