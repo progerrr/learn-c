@@ -6,22 +6,33 @@
 
 using namespace std;
 
-void sort_choice() {
-    const int length = 5;
-    int array[length] = {30, 50, 20, 10, 40};
+int iRandom(int a, int b) { return a + (b - a + 1) * rand() / RAND_MAX; }
 
-    for (int i0 = 0; i0 < length - 1; ++i0) {
-        int minI = i0;
+void sort_minmax() {
 
-        for (int i = i0 + 1; i < length; ++i) {
-            if (array[i] < array[minI])
+  int length = 5, i = 0;
 
-                minI = i;
-        }
+  int *arr = new int[length];
+  for (int i = 0; i < length; i++) {
+    arr[i] = 0 + (rand() % (10));
+    cout << arr[i] << " ";
+  }
 
-        swap(array[i0], array[minI]);
+  cout << endl;
+  for (int i0 = 0; i0 < length - 1; i0++) {
+    int minI = i0;
+
+    for (int i = i0 + 1; i < length; i++) {
+
+      if (arr[i] < arr[minI])
+        minI = i;
     }
 
-    for (int i = 0; i < length; ++i)
-        cout << array[i] << ' ';
+    swap(arr[i0], arr[minI]);
+  }
+
+  for (int i = 0; i < length; i++)
+    cout << arr[i] << ' ';
+
+  delete[] arr;
 }
