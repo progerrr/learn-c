@@ -1,18 +1,16 @@
-#include "algo.h"
 #include <cmath>
 #include <iomanip>
 #include <iostream>
-
+#include "algo.h"
 using namespace std;
 
 static double f(double x, int k) { return x - k * cos(x); }
 
 void fpd(double eps, int k, int precision, int n) {
-    cout<<"Half Division" << "("<<n<<")"<<": "<<endl;
+    cout << "Half Division" << "(" << n << ")" << ": " << endl;
     double x, a, b;
-    int i;
+    int i = 0;
 
-    i = 0;
     cout << "Input line [a b]:" << endl;
     cin >> a >> b;
 
@@ -38,7 +36,7 @@ void fpd(double eps, int k, int precision, int n) {
 static double df(double x, int k) { return 1 + k * sin(x); }
 
 void fn(double eps, int k, int precision, int n) {
-    cout<<"Newton" << "("<<n<<")"<<": "<<endl;
+    cout << "Newton" << "(" << n << ")" << ": " << endl;
     double a;
     int i = 0;
 
@@ -57,7 +55,7 @@ void fn(double eps, int k, int precision, int n) {
 }
 
 void fiter(double eps, int k, int precision, int n) {
-    cout<<"Iteration" << "("<<n<<")"<<": "<<endl;
+    cout << "Iteration" << "(" << n << ")" << ": " << endl;
     double a;
     int i = 0;
 
