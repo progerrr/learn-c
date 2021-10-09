@@ -1,3 +1,3 @@
 #pragma once
 
-void sort_choice();
+void sort_minmax();

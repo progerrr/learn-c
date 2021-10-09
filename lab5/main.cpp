@@ -3,7 +3,7 @@
 
 int main() {
     
-    sort_choice();
+    sort_minmax();
 
     return 0;
 }
