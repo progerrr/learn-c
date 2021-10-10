@@ -7,16 +7,21 @@
 
 using namespace std;
 
-void sort_minmax() {
-
-    int length = 5, i , rnum;
-
+void create_array (int length, int i , int rnum) {
+    
     int *arr = new int[length];
     for (int i = 0; i < length; i++) {
         getrandom(&rnum, 4, 0);
         arr[i] = 1 + (rnum % (10));
         cout << arr[i] << " ";
     }
+}
+
+void sort_minmax() {
+
+    int length = 5, i , rnum;
+
+    create_array ()
 
     cout << endl;
     for (int i0 = 0; i0 < length - 1; i0++) {
