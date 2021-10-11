@@ -18,9 +18,9 @@ void create_array() {
         cout << arr[i] << " ";
     }
     cout<<endl;
-    /*for (int i = 0; i < length; i++) {
-        b[j] = arr[i];
-    }*/
+    for (int i = 0; i < length; i++) {
+        b[i] = arr[i];
+    }
 }
 
 void sort_minmax() {
@@ -73,7 +73,7 @@ void sort_minmax_revert() {
     cout << endl << n << endl << endl;
 }
 
-/*void sort_bubble() {
+void sort_bubble() {
     int b[5];
     int length = 5;
     int k, i, j, n = 0;
@@ -93,4 +93,4 @@ void sort_minmax_revert() {
         cout << b[i] << ' ';
 
     cout << endl << n;
-}*/
+}
