@@ -17,13 +17,15 @@ void create_array() {
         arr[i] = 1 + (rnum % (10));
         cout << arr[i] << " ";
     }
-    cout<<endl;
+    cout << endl;
     for (int i = 0; i < length; i++) {
         b[i] = arr[i];
     }
+    cout << endl;
 }
 
 void sort_minmax() {
+    cout << "Selection sort: ";
     int arr[5];
     int length = 5;
     int n = 0;
@@ -45,10 +47,11 @@ void sort_minmax() {
     for (int i = 0; i < length; i++)
         cout << arr[i] << ' ';
 
-    cout << endl << n << endl << endl;
+    cout << endl << "Number of transpositions: " << n << endl << endl;
 }
 
 void sort_minmax_revert() {
+    cout << "Selection sort in another order: ";
     int arr[5];
     int length = 5;
     int n = 0;
@@ -70,10 +73,11 @@ void sort_minmax_revert() {
     for (int i = 0; i < length; i++)
         cout << arr[i] << ' ';
 
-    cout << endl << n << endl << endl;
+    cout << endl << "Number of transpositions: " << n << endl << endl;
 }
 
 void sort_bubble() {
+    cout << "Bubble sort: ";
     int b[5];
     int length = 5;
     int k, i, j, n = 0;
@@ -92,5 +96,27 @@ void sort_bubble() {
     for (int i = 0; i < length; i++)
         cout << b[i] << ' ';
 
-    cout << endl << n;
+    cout << endl << "Number of transpositions: " << n << endl << endl;
+}
+void sort_bubble_revert() {
+    cout << "Bubble sort in another order: ";
+    int b[5];
+    int length = 5;
+    int k, i, j, n = 0;
+    for (int i = 0; i < length - 1; i++) {
+        for (int j = 0; j < length - i - 1; j++) {
+            if (b[j] < b[j + 1]) {
+                k = b[j];
+                b[j] = b[j + 1];
+                b[j + 1] = k;
+                n++;
+            }
+        }
+    }
+    cout << endl;
+
+    for (int i = 0; i < length; i++)
+        cout << b[i] << ' ';
+
+    cout << endl << "Number of transpositions: " << n;
 }

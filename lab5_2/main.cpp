@@ -2,17 +2,16 @@
 #include <iostream>
 #include <sys/random.h>
 
-
 int main() {
 
- 
     create_array();
-    
+
     sort_minmax();
     sort_minmax();
     sort_minmax_revert();
 
     sort_bubble();
-
+    sort_bubble();
+    sort_bubble_revert();
     return 0;
 }
