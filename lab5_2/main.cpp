@@ -21,9 +21,9 @@ int main() {
     std::cout << "DYNAMIC array:";
     dynamic_array(darr1, darr2, length);
 
-    dynamic_minmax(darr1, length);
+    sort_minmax_dynarray(darr1, length);
     free(darr1);
-    dynamic_bubble(darr2, length);
+    sort_bubble_dynarray(darr2, length);
     free(darr2);
 
     return 0;

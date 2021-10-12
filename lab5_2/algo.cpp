@@ -169,7 +169,7 @@ void dynamic_array(int *&darr1, int *&darr2, int length) {
     }
 }
 
-void dynamic_minmax(int *darr1, int length) {
+void sort_minmax_dynarray(int *darr1, int length) {
 
     cout << "Selection sort: ";
     int n = 0, k = 0, i;
@@ -196,7 +196,7 @@ void dynamic_minmax(int *darr1, int length) {
     cout << "Number of transpositions: " << n << endl << endl;
 }
 
-void dynamic_bubble(int *darr2, int length) {
+void sort_bubble_dynarray(int *darr2, int length) {
     cout << "Bubble sort: ";
     int m, i, j, k = 0, n = 0;
 
