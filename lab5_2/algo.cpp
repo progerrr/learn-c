@@ -19,7 +19,6 @@ void create_array() {
         cout << arr[i] << " ";
     }
 
-
     for (int i = 0; i < length; i++) {
         b[i] = arr[i];
     }
@@ -154,7 +153,7 @@ void sort_bubble_revert() {
     cout << "Number of transpositions: " << n << endl << endl;
 }
 
-void dynamic_array(int*& darr1, int*& darr2, int length) {
+void dynamic_array(int *&darr1, int *&darr2, int length) {
 
     int i, rnum;
     darr1 = (int *)malloc(length * sizeof(int));
@@ -163,16 +162,15 @@ void dynamic_array(int*& darr1, int*& darr2, int length) {
     for (int i = 0; i < length; i++) {
         getrandom(&rnum, 4, 0);
         darr1[i] = 1 + (rnum % (10));
-        //cout << darr1[i] << " ";
     }
     cout << endl;
     for (int i = 0; i < length; i++) {
         darr2[i] = darr1[i];
     }
-    
 }
 
-void dynamic_minmax(int*& darr1, int length) {
+void dynamic_minmax(int *darr1, int length) {
+
     cout << "Selection sort: ";
     int n = 0, k = 0, i;
 
@@ -192,17 +190,13 @@ void dynamic_minmax(int*& darr1, int length) {
         }
     }
 
-
-   // for (int i = 0; i < length; i++)
-    //    cout << darr1[i] << ' ';
-
     cout << endl;
 
     cout << "Number of compares: " << k << endl;
     cout << "Number of transpositions: " << n << endl << endl;
 }
 
-void dynamic_bubble(int*& darr2, int length) {
+void dynamic_bubble(int *darr2, int length) {
     cout << "Bubble sort: ";
     int m, i, j, k = 0, n = 0;
 
@@ -221,10 +215,6 @@ void dynamic_bubble(int*& darr2, int length) {
         if (exit == 0)
             break;
     }
-
-
-  /*  for (int i = 0; i < length; i++)
-        cout << darr2[i] << ' '; */
 
     cout << endl;
 
