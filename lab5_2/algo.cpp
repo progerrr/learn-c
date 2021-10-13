@@ -15,12 +15,12 @@ void create_array() {
 
     for (int i = 0; i < length; i++) {
         getrandom(&rnum, 4, 0);
-        arr[i] = 1 + (rnum % (10));
-        cout << arr[i] << " ";
+        *(arr+i) = 1 + (rnum % (10));
+        cout << *(arr+i) << " ";
     }
 
     for (int i = 0; i < length; i++) {
-        b[i] = arr[i];
+        *(b+i) = *(arr+i);
     }
 
     cout << endl;
@@ -153,7 +153,7 @@ void sort_bubble_revert() {
     cout << "Number of transpositions: " << n << endl << endl;
 }
 
-void dynamic_array(int *&darr1, int *&darr2, int length) {
+void create_dynamic_array(int *&darr1, int *&darr2, int length) {
 
     int i, rnum;
     darr1 = (int *)malloc(length * sizeof(int));
@@ -161,11 +161,11 @@ void dynamic_array(int *&darr1, int *&darr2, int length) {
 
     for (int i = 0; i < length; i++) {
         getrandom(&rnum, 4, 0);
-        darr1[i] = 1 + (rnum % (10));
+        *(darr1+i) = 1 + (rnum % (10));
     }
     cout << endl;
     for (int i = 0; i < length; i++) {
-        darr2[i] = darr1[i];
+        *(darr2+i) = *(darr1+i);
     }
 }
 
