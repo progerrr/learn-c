@@ -32,18 +32,18 @@ void sort_minmax() {
     int length = 5;
     int n = 0, k = 0;
 
-    for (int i0 = 0; i0 < length - 1; i0++) {
-        int minI = i0;
+    for (int i = 0; i < length - 1; i++) {
+        int minI = i;
 
-        for (int i = i0 + 1; i < length; i++) {
+        for (int j = i + 1; j < length; j++) {
 
-            if (arr[i] < arr[minI]) {
-                minI = i;
+            if (arr[j] < arr[minI]) {
+                minI = j;
             }
             k++;
         }
-        if (arr[i0] != arr[minI]) {
-            swap(arr[i0], arr[minI]);
+        if (arr[i] != arr[minI]) {
+            swap(arr[i], arr[minI]);
             n++;
         }
     }
@@ -61,22 +61,23 @@ void sort_minmax() {
 
 void sort_minmax_revert() {
     cout << "Selection sort in another order: ";
+
     int arr[5];
     int length = 5;
     int n = 0, k = 0;
 
-    for (int i0 = 0; i0 < length - 1; i0++) {
-        int maxI = i0;
+    for (int i = 0; i < length - 1; i++) {
+        int maxI = i;
 
-        for (int i = i0 + 1; i < length; i++) {
+        for (int j = i + 1; j < length; j++) {
 
-            if (arr[i] > arr[maxI]) {
-                maxI = i;
+            if (arr[j] > arr[maxI]) {
+                maxI = j;
             }
             k++;
         }
-        if (arr[i0] != arr[maxI]) {
-            swap(arr[i0], arr[maxI]);
+        if (arr[i] != arr[maxI]) {
+            swap(arr[i], arr[maxI]);
             n++;
         }
     }
@@ -94,6 +95,7 @@ void sort_minmax_revert() {
 
 void sort_bubble() {
     cout << "Bubble sort: ";
+    
     int b[5];
     int length = 5;
     int m, i, j, k = 0, n = 0;
@@ -126,6 +128,7 @@ void sort_bubble() {
 }
 void sort_bubble_revert() {
     cout << "Bubble sort in another order: ";
+
     int b[5];
     int length = 5;
     int m, i, j, k = 0, n = 0;
@@ -156,6 +159,7 @@ void sort_bubble_revert() {
 void create_dynamic_array(int *&darr1, int *&darr2, int length) {
 
     int i, rnum;
+
     darr1 = (int *)malloc(length * sizeof(int));
     darr2 = (int *)malloc(length * sizeof(int));
 
@@ -163,15 +167,17 @@ void create_dynamic_array(int *&darr1, int *&darr2, int length) {
         getrandom(&rnum, 4, 0);
         *(darr1+i) = 1 + (rnum % (10));
     }
+
     cout << endl;
+
     for (int i = 0; i < length; i++) {
         *(darr2+i) = *(darr1+i);
     }
 }
 
 void sort_minmax_dynarray(int *darr1, int length) {
-
     cout << "Selection sort: ";
+
     int n = 0, k = 0, i;
 
     for (int i0 = 0; i0 < length - 1; i0++) {
@@ -184,6 +190,7 @@ void sort_minmax_dynarray(int *darr1, int length) {
             }
             k++;
         }
+
         if (darr1[i0] != darr1[minI]) {
             swap(darr1[i0], darr1[minI]);
             n++;
@@ -198,6 +205,7 @@ void sort_minmax_dynarray(int *darr1, int length) {
 
 void sort_bubble_dynarray(int *darr2, int length) {
     cout << "Bubble sort: ";
+
     int m, i, j, k = 0, n = 0;
 
     for (int i = 0; i < length - 1; i++) {
