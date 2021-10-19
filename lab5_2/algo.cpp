@@ -1,10 +1,10 @@
-#include "algo.h"
 #include <algorithm>
 #include <cmath>
 #include <iomanip>
 #include <iostream>
 #include <stdlib.h>
 #include <sys/random.h>
+#include "algo.h"
 
 using namespace std;
 /*
