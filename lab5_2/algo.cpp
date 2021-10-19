@@ -7,7 +7,7 @@
 #include <sys/random.h>
 
 using namespace std;
-
+/*
 void create_array() {
     int i, j, rnum;
     int arr[5], b[5];
@@ -25,10 +25,9 @@ void create_array() {
 
     cout << endl;
 }
-
-void sort_minmax() {
+*/
+void sort_minmax(int *arr) {
     cout << "Selection sort: ";
-    int arr[5];
     int length = 5;
     int n = 0, k = 0;
 
@@ -59,10 +58,9 @@ void sort_minmax() {
     cout << "Number of transpositions: " << n << endl << endl;
 }
 
-void sort_minmax_revert() {
+void sort_minmax_revert(int* arr) {
     cout << "Selection sort in another order: ";
 
-    int arr[5];
     int length = 5;
     int n = 0, k = 0;
 
@@ -93,10 +91,9 @@ void sort_minmax_revert() {
     cout << "Number of transpositions: " << n << endl << endl;
 }
 
-void sort_bubble() {
+void sort_bubble(int* b) {
     cout << "Bubble sort: ";
     
-    int b[5];
     int length = 5;
     int m, i, j, k = 0, n = 0;
 
@@ -126,10 +123,9 @@ void sort_bubble() {
     cout << "Number of compares: " << k << endl;
     cout << "Number of transpositions: " << n << endl << endl;
 }
-void sort_bubble_revert() {
+void sort_bubble_revert(int* b) {
     cout << "Bubble sort in another order: ";
 
-    int b[5];
     int length = 5;
     int m, i, j, k = 0, n = 0;
 
