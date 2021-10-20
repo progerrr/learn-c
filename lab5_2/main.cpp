@@ -6,21 +6,12 @@ int main() {
     int *darr1, *darr2;
 
     std::cout << "STATIC array:" << std::endl;
-    // create_array();
 
     int i, j, rnum;
     int arr[5], b[5];
     int length = 5;
 
-    for (int i = 0; i < length; i++) {
-        getrandom(&rnum, 4, 0);
-        *(arr + i) = 1 + (rnum % (10));
-        cout << *(arr + i) << " ";
-    }
-
-    for (int i = 0; i < length; i++) {
-        *(b + i) = *(arr + i);
-    }
+    create_array(arr, b, 5);
 
     cout << endl;
 

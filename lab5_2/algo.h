@@ -1,5 +1,5 @@
 #pragma once
-void create_array();
+void create_array(int*, int*, int);
 void sort_minmax(int*);
 void sort_minmax_revert(int*);
 void sort_bubble(int*);

@@ -7,11 +7,9 @@
 #include "algo.h"
 
 using namespace std;
-/*
-void create_array() {
+
+void create_array(int* arr, int* b, int length) {
     int i, j, rnum;
-    int arr[5], b[5];
-    int length = 5;
 
     for (int i = 0; i < length; i++) {
         getrandom(&rnum, 4, 0);
@@ -25,7 +23,7 @@ void create_array() {
 
     cout << endl;
 }
-*/
+
 void sort_minmax(int *arr) {
     cout << "Selection sort: ";
     int length = 5;
