@@ -7,6 +7,7 @@ int main() {
     I_print arr[4];
     double a = -0.5;
     double b = 3.0;
+    cout << sizeof(I_print);
     cout << "Function integration area: " << a << "<=x<=" << b << endl;
     double eps = 0.1;
     int n = 0;
