@@ -6,7 +6,7 @@ int main() {
     double s, x, a1, a2, k;
     int n;
     const double h = 0.2, eps = 0.000001;
-    cout << "x=" << setw(19) << " Y(x)=" << setw(15) << "S(x)= " << setw(7) << "n=" << endl;
+    cout << "x=" << setw(19) << "Y(x)= " << setw(15) << "S(x)= " << setw(7) << "n=" << endl;
     for (x = 0; x <= 1; x += 0.2) {
         n = 0;
         a1 = x;

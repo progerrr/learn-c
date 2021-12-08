@@ -23,21 +23,49 @@ int main() {
       for (int i = 0; i < strlen(token); i++) {
         keys[r] += (int)(token[i]);
       }
-      keys[r] %= 256;
+      //keys[r] %= 256;
       r++;
+
       token = strtok(NULL, delims);
     }
   }
+  cout << "keys: " << endl;
+  for (int i = 0; i < r; i++)
+    cout << keys[i] << " ";
 
-  while (myfile.get(sim) && i < count) {
-    cout << sim;
-    i++;
+  cout << endl;
+
+  char sim;
+  int code = (int)sim;
+  int j = 0;
+  int f;
+  cout << "1. Encrypt;" << endl << "2. Decrypt;" << endl;
+  cin>> f;
+  if (f == 1) {
+    while (fin.get(sim)) {
+      j %= r;
+      code = (int)sim;
+      code += keys[j];
+      j++;
+      fout << (char)code;
+    }
   }
-  myfile.close();
-}
+  fin.seekg(0);
 
-fin.close();
-fout.close();
-fkey.close();
-return 0;
+j=0;
+
+  if (f == 2) {
+    while (fin.get(sim)) {
+      j %= r;
+      code = (int)sim;
+      code -= keys[j];
+      j++;
+      fout << (char)code;
+    }
+  }
+
+  fin.close();
+  fout.close();
+  fkey.close();
+  return 0;
 }
