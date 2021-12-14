@@ -9,7 +9,7 @@
 using namespace std;
 
 void create_array(int* arr, int* b, int length) {
-    int i, j, rnum;
+    int i, rnum;
 
     for (int i = 0; i < length; i++) {
         getrandom(&rnum, 4, 0);
