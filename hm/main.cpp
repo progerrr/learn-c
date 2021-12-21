@@ -1,7 +1,11 @@
 #include "algo.h"
 #include <stdio.h>
+#include "buffer.cpp"
 
 int main() {
+  BufferToggle bt;
+  bt.off();
+
   int count = 0;
   char txt[1000]; //массив введенных символов
 

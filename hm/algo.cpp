@@ -1,20 +1,31 @@
 #include <cstring>
 #include <stdio.h>
 
+
 void input(char *txt) {
   int i;
   char letter;
   for (int i = 0; i < 1000; i++) {
     txt[i] = '\0';
   }
-  i=0;
+  i = 0;
   do {
     letter = getchar();
     if (letter <= 'z' and letter >= 'a' or letter == ' ' or letter == '.') {
-      putchar(letter);
+      // putchar(letter);
       txt[i] = letter;
       i++;
     }
+    if (letter == '\b') {
+      putchar('\b');
+      putchar(' ');
+      putchar('\b');
+      if (i > 0) {
+        --i;
+        txt[i] = '\0';
+      }
+    }
+
   } while (letter != '.');
 }
 
