@@ -19,6 +19,8 @@ int main()
  
   fill_arr_from_dict(dict, num_w);
 
+  sort_dict(dict, num_w);
+
   while (true)
   {
     switch (menu())

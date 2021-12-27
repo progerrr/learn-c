@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <stdio.h>
+#include <algorithm>
 using namespace std;
 
 const int l_word = 31;
@@ -22,7 +23,7 @@ int menu()
        << "3. translate from ENG to RUS;" << endl
        << "4. translate from RUS to ENG;" << endl
        << "5. show me dictionary;" << endl
-       << "6. output dicctionary to file;" << endl
+       << "6. output dictionary to file;" << endl
        << "7. exit." << endl;
   cin >> n;
   return n;
@@ -38,8 +39,23 @@ void add_w(Dictionary *dict, int &num_w)
   num_w++;
 }
 
+void sort_dict(Dictionary *dict, int num_w)
+{
+  for (int i = 0; i < num_w; i++)
+  {
+    for (int j = i + 1; j < num_w; j++)
+      if (strcmp(dict[i].eng, dict[j].eng) > 0)
+      {
+        Dictionary tmp = dict[i];
+        dict[i] = dict[j];
+        dict[j] = tmp;
+      }
+  }
+}
+
 void print_dict(Dictionary *dict, int num_w)
 {
+  sort_dict(dict, num_w);
   cout << "Your recent dictionary: " << num_w << endl;
 
   for (int j = 0; j < num_w; j++)
@@ -65,15 +81,15 @@ void delete_w(Dictionary *dict, int &num_w)
   cout << "Select word you want to delete: " << endl;
   cin >> k;
   k--;
- 
-  for (int i = k; i < num_w - 1; i++)
-  for (int j=0; j<31; j++)
-    dict[i].eng[j] = dict[i + 1].eng[j];
 
   for (int i = k; i < num_w - 1; i++)
-  for (int j=0; j<31; j++)
-    dict[i].rus[j] = dict[i + 1].rus[j];
-  
+    for (int j = 0; j < 31; j++)
+      dict[i].eng[j] = dict[i + 1].eng[j];
+
+  for (int i = k; i < num_w - 1; i++)
+    for (int j = 0; j < 31; j++)
+      dict[i].rus[j] = dict[i + 1].rus[j];
+
   num_w--;
 }
 
@@ -144,7 +160,8 @@ void transl_ru_en(Dictionary *dict, int num_w)
     cout << "EN: " << dict[t].eng << endl;
 }
 
-void fill_arr_from_dict(Dictionary *dict, int &num_w) {
+void fill_arr_from_dict(Dictionary *dict, int &num_w)
+{
   ifstream file("dictionary", ios::in | ios::binary);
   int len = 100;
   const char ch = '\n';
@@ -168,3 +185,4 @@ void fill_arr_from_dict(Dictionary *dict, int &num_w) {
   }
   file.close();
 }
+
