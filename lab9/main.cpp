@@ -6,63 +6,18 @@ using namespace std;
 
 int main()
 {
-  ifstream file("dictionary", ios::in | ios::binary);
-
+  int num_w = 0;
   int words_num = 100;
   Dictionary dict[words_num];
-  int num_w = 0;
-  char txt[1000];
-
-  int len = 100;
-  const char ch = '\n';
-  char mass[len][31];
-  int p = 1;
-  int h = 0;
-  for (int r = 0; !file.eof(); r++)
-  {
-    file.getline(mass[r], len - 1, ch); //Считываем строки в массив
-    if (r % 2 == 0)
+  
+  for (int i = 0; i < words_num; i++)
+    for (int j = 0; j < 31; j++)
     {
-      cout << p << ": ";
-      p++;
+      dict[i].eng[j] = '\0';
+      dict[i].rus[j] = '\0';
     }
-    cout << mass[r];
-    if (r % 2 == 0)
-    {
-      cout << "-";
-    }
-    else
-    {
-      cout << endl;
-    }
-    /*
-   if (r%2==0) {
-     file.getline(dict[num_w].eng, len - 1, ch);
-   }
-   if (r%2!=0) {
-     file.getline(dict[num_w].rus, len - 1, ch);
-     num_w++;
-   }
-*/
-    h++;
-  }
-
-  file.close();
-
-  for (int i = 0; i < h; i++)
-  {if (i%2==0)
-    for (int j = 0; j < strlen(mass[i]); j++)
-      dict[num_w].eng[j] = mass[i][j];
-  if (i%2!=0) {
-    for (int j = 0; j < strlen(mass[i]); j++)
-      dict[num_w].eng[j] = mass[i][j];
-  num_w++;
-
-  }
-  }
-
-
-
+ 
+  fill_arr_from_dict(dict, num_w);
 
   while (true)
   {
@@ -72,20 +27,23 @@ int main()
       add_w(dict, num_w);
       break;
     case 2:
+      delete_w(dict, num_w);
       break;
     case 3:
+      transl_en_ru(dict, num_w);
       break;
     case 4:
+      transl_ru_en(dict,num_w);
       break;
     case 5:
       print_dict(dict, num_w);
       break;
     case 6:
+      overwrite(dict, num_w);
       break;
     case 7:
       return 0;
     }
   }
-  file.close();
   return 0;
 }
