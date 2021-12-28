@@ -16,8 +16,7 @@ struct Dictionary
 int menu()
 {
   int n;
-  cout << endl
-       << "Enter number from 1 to 7" << endl
+  cout << "Enter number from 1 to 7" << endl
        << "1. add word to dictionary;" << endl
        << "2. delete word from dictionary;" << endl
        << "3. translate from ENG to RUS;" << endl
@@ -26,7 +25,13 @@ int menu()
        << "6. output dictionary to file;" << endl
        << "7. exit." << endl;
   cin >> n;
-  return n;
+  if (n < 1 or n > 7)
+  {
+    cout << "Incorrect number" << endl;
+    return 0;
+  }
+  else
+    return n;
 }
 
 void add_w(Dictionary *dict, int &num_w)
@@ -185,4 +190,3 @@ void fill_arr_from_dict(Dictionary *dict, int &num_w)
   }
   file.close();
 }
-
